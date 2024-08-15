@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <title>Filmo Patterns - Un projet OpenClassrooms sur les design patterns</title>
+</head>
+<body>
+    <header class="main-header">
+        <h1>Filmo Patterns</h1>
+        <p>
+            Des films et des design patterns
+            <br />
+            Nombre d'envies : <span class="wish-count">0</span>
+        </p>
+    </header>
+    <div class="search-form-wrapper"></div>
+    <div class="forms-wrapper">
+        <div class="filter-form-wrapper"></div>
+        <div class="sorter-form-wrapper"></div>
+    </div>
+    <main class="movies-wrapper"></main>
+    <div class="modal"></div>
+    
+    <!-- Lib -->
+    <script src="/lib/filter-v1/index.js"></script>
+    <script src="/lib/filter-v2/index.js"></script>
+    <script src="/lib/sorter/index.js"></script>
+
+    <!-- Factories -->
+    <script src="/js/factories/MoviesFactory.js"></script>
+
+    <!-- Models -->
+    <script src="/js/models/OldMovie.js"></script>
+    <script src="/js/models/ExternalMovie.js"></script>
+    <script src="/js/models/Movie.js"></script>
+
+    <!-- Singleton -->
+    <script src="/js/db/User.js"></script>
+
+    <!-- Adapters -->
+    <script src="/js/adapters/FilterMoviesAdapter.js"></script>
+
+    <!-- Decorators -->
+    <script src="/js/decorators/movieCardWithPlayer.js"></script>
+
+    <!-- Proxy -->
+    <script src="/js/proxy/ProxyRatingSorter.js"></script>
+
+    <!-- Search -->
+    <script src="/js/search/MainSearch.js"></script>
+
+    <!-- Templates -->
+    <script src="/js/templates/PlayerModal.js"></script>
+    <script src="/js/templates/MovieCard.js"></script>
+    <script src="/js/templates/FormModal.js"></script>
+    <script src="/js/templates/FilterForm.js"></script>
+    <script src="/js/templates/SorterForm.js"></script>
+    <script src="/js/templates/SearchForm.js"></script>
+
+    <!-- Api -->
+    <script src="/js/api/Api.js"></script>
+
+    <!-- Pub/Sub -->
+    <script src="/js/wishlist/Subject.js"></script>
+    <script src="/js/wishlist/Counter.js"></script>
+
+    <!-- UserContext -->
+    <script src="/js/user/State.js"></script>
+    <script src="/js/user/Context.js"></script>
+
+    <!-- Entry point -->
+    <script src="/js/App.js"></script>
+</body>
+</html>

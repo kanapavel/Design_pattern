@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+}
+
+/* Utility class */
+.fs-16 {
+    font-size: 16px;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.center {
+    text-align: center;
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    align-items: baseline;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+}
+
+/* Movies Wrapper */
+.movies-wrapper {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+/* Movie Card */
+.movie-thumbnail {
+    position: relative;
+}
+
+.movie-thumbnail img {
+    border-radius: 8px;
+    height: 177px;
+    width: 120px;
+    object-fit: cover;
+    box-shadow: 4px 5px 5px #333;
+}
+
+.wish-btn {
+    align-items: center;
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 8px;
+    bottom: 5px;
+    cursor: pointer;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    padding: 4px;
+    position: absolute;
+    right: 55px;
+    width: 30px;
+}
+
+.wish-btn path {
+    fill: transparent;
+    stroke-width: 6px;
+    stroke: #000;
+    transition: .4s;
+}
+
+.wish-btn.wished path  {
+    fill: tomato;
+    stroke: #fff;
+}
+
+/* Modal */
+.modal-on {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, .7);
+    overflow: hidden;
+}
+
+.modal form {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-bottom: 8px;
+}
+
+.submit-btn {
+    margin-top: 12px;
+    height: 40px;
+    background-color: #eee;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #333;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #333;
+    color: #eee;
+    border-color: #eee;
+}
+
+.forms-wrapper {
+    display: flex;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+/* Filter Form */
+.filter-form-wrapper {
+    margin-bottom: 12px;
+}
+
+
+/* Player Modal */
+.player-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.player {
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #eee;
+    border: 1px solid #333;
+    border-radius: 8px;
+    height: 36px;
+    width: 200px;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-color: #eee;
+    color: #333;
+}
+
+
+/* Search Form */
+.search-form-wrapper {
+    display: flex;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+}
+
+.search-form-wrapper form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    margin-right: 24px;
+}
