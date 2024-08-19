@@ -220,3 +220,11 @@ body {
     opacity: 1;
 
 }
+.movies-wrapper> p{
+    grid-column-start: 1;
+    grid-column-end: 9;
+    height: 400px;
+    padding: 200px;
+    text-align: center;
+    font-size: 25px;
+}
