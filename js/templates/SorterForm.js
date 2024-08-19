@@ -7,6 +7,11 @@ class SorterForm {
         this.$moviesWrapper = document.querySelector('.movies-wrapper')
 
         this.ProxyRatingSorter = new ProxyRatingSorter()
+
+        // WishLib Pub/sub
+        this.WishlistSubject = new WishlistSubject()
+        this.WhishListCounter = new WhishListCounter()
+        this.WishlistSubject.subscribe(this.WhishListCounter)
     }
 
     async sorterMovies(sorter) {
@@ -20,12 +25,16 @@ class SorterForm {
             const SortedMovies = sortedData.data 
 
             SortedMovies.forEach(Movie => {
-                const Template = new MovieCard(Movie)
+                const Template = movieCardWithPlayer(
+                    new MovieCard(Movie, this.WishlistSubject)
+                )
                 this.$moviesWrapper.appendChild(Template.createMovieCard())
             })
         } else {
             this.Movies.forEach(Movie => {
-                const Template = new MovieCard(Movie)
+                const Template = movieCardWithPlayer(
+                    new MovieCard(Movie, this.WishlistSubject)
+                )
                 this.$moviesWrapper.appendChild(Template.createMovieCard())
             })
         }

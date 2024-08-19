@@ -5,6 +5,11 @@ class FilterForm {
         this.$wrapper = document.createElement('div')
         this.$filterFormWrapper = document.querySelector('.filter-form-wrapper')
         this.$moviesWrapper = document.querySelector('.movies-wrapper')
+
+        // WishLib Pub/sub
+        this.WishlistSubject = new WishlistSubject()
+        this.WhishListCounter = new WhishListCounter()
+        this.WishlistSubject.subscribe(this.WhishListCounter)
     }
 
     async filterMovies(actor) {
@@ -14,7 +19,9 @@ class FilterForm {
         const FilteredMovies = await AdaptedFilterLib.filterByActor()
 
         FilteredMovies.forEach(Movie => {
-            const Template = new MovieCard(Movie)
+            const Template = movieCardWithPlayer(
+                new MovieCard(Movie, this.WishlistSubject)
+            )
             this.$moviesWrapper.appendChild(Template.createMovieCard())
         })
     }
